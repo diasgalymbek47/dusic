@@ -64,12 +64,12 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item mt-auto">
-          <RouterLink to="/logout" class="nav-link">
+          <div class="nav-link">
             <span class="material-symbols-outlined">
               logout
             </span>
             Выйти
-          </RouterLink>
+          </div>
         </li>
       </ul>
     </div>
@@ -145,5 +145,7 @@ defineProps({
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
+
+  cursor: pointer;
 }
 </style>

@@ -107,7 +107,7 @@ const player = useMusicPlayer()
   align-items: center;
   justify-content: center;
 
-  min-height: 200px;
+  min-height: 100px;
 
   background-color: #60696c;
   border-radius: 0 0 10px 10px;

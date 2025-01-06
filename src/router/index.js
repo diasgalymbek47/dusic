@@ -32,11 +32,6 @@ const router = createRouter({
       path: '/delete',
       name: 'Delete',
       component: () => import('@/views/Delete.vue')
-    },
-    {
-      path: '/logout',
-      name: 'Logout',
-      component: () => import('@/views/LogoutView.vue')
     }
   ],
 })

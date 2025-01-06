@@ -7,19 +7,19 @@
     <form>
       <div class="form-group d-flex flex-column">
         <label for="music_name">Название музыки</label>
-        <input name="music_name" id="music_name" type="text">
+        <input name="music_name" id="music_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="artist_name">Название артиста</label>
-        <input name="artist_name" id="artist_name" type="text">
+        <input name="artist_name" id="artist_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="album_name">Название альбома</label>
-        <input name="album_name" id="album_name" type="text">
+        <input name="album_name" id="album_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="genre_name">Название жанра</label>
-        <input name="genre_name" id="genre_name" type="text">
+        <input name="genre_name" id="genre_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="image_file">Выберите картинку</label>
@@ -46,7 +46,10 @@
   input[type="text"] {
     padding: 10px;
     border-radius: 10px;
-    background-color: #ccc;
+    background-color: #221f1f;
+    color: white;
+    outline: none;
+    border: none;
   }
 
   input[type="file"] {
@@ -58,6 +61,7 @@
   input[type="text"] {
     &:focus {
       background-color: #fff;
+      color: black;
     }
   }
 }
