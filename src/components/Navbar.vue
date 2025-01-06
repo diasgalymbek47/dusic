@@ -32,7 +32,7 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="statistics" class="nav-link">
+          <RouterLink to="/statistics" class="nav-link">
             <span class="material-symbols-outlined">
               analytics
             </span>
@@ -40,7 +40,7 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="add" class="nav-link">
+          <RouterLink to="/add" class="nav-link">
               <span class="material-symbols-outlined">
                 add_box
               </span>
@@ -48,7 +48,7 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="edit" class="nav-link">
+          <RouterLink to="/edit" class="nav-link">
               <span class="material-symbols-outlined">
                 edit_square
               </span>
@@ -56,7 +56,7 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="delete" class="nav-link">
+          <RouterLink to="/delete" class="nav-link">
               <span class="material-symbols-outlined">
                 delete
               </span>
@@ -64,7 +64,7 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item mt-auto">
-          <RouterLink to="logout" class="nav-link">
+          <RouterLink to="/logout" class="nav-link">
             <span class="material-symbols-outlined">
               logout
             </span>
