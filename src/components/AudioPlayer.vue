@@ -84,7 +84,8 @@ function setVolume(event) {
             </div>
             <div class="audio-player-options">
               <span @click="player.toggleAutoPlay" class="material-symbols-outlined"
-                    :class="{active: player.autoplay}" title="Автоматическая воспроизведения">
+                    :class="{active: player.autoplay}"
+                    title="Автоматическая воспроизведения">
                 autoplay
               </span>
               <span @click="player.toggleReplay" class="material-symbols-outlined"
@@ -110,8 +111,12 @@ function setVolume(event) {
             </div>
           </div>
           <div class="audio-player-info mt-3">
-            {{ player.name ? player.name : "Неизвестно" }} |
-            {{ player.artist ? player.artist : "Неизвестно" }}
+            <div class="audio-player-info-artist-container">
+              <div class="audio-player-info-artist">
+                {{ player.name ? player.name : "Неизвестно" }} |
+                {{ player.artist ? player.artist : "Неизвестно" }}
+              </div>
+            </div>
             <span class="audio-player-start">{{ formatTime(player.progressTime) }}</span>
             <div @click="setProgress" class="audio-player-progressbar">
               <div
@@ -177,6 +182,13 @@ function setVolume(event) {
 
   background-color: #292323;
   border-radius: 15px;
+}
+
+@media (max-width: 1024px) {
+  .audio-player-content {
+    width: 95%;
+    height: 80%;
+  }
 }
 
 .audio-player-close {
@@ -341,5 +353,25 @@ function setVolume(event) {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.audio-player-info-artist-container {
+  overflow: hidden;
+  width: 200px;
+}
+
+.audio-player-info-artist {
+  display: inline-block;
+  white-space: nowrap;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 </style>

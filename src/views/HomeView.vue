@@ -8,8 +8,8 @@ const player = useMusicPlayer();
 <template>
   <div class="home-view">
     <div v-if="player.collection" class="home-view-content">
-      <div class="home-view-content-header container">😺😺😺 Добавь, Получи, Измени, Удали
-        😺😺😺
+      <div class="home-view-content-header container">
+        <p>😺😺😺 Добавь, Получи, Измени, Удали 😺😺😺</p>
       </div>
       <div class="home-view-content-body container">
         <div class="row">
@@ -32,12 +32,17 @@ const player = useMusicPlayer();
 }
 
 .home-view-content-header {
-  padding: 30px;
-  background: linear-gradient(to right, #ab9bcc, #ffda70);
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  color: #221f1f;
-  border-radius: 10px;
+  padding: 10px;
+
+  p {
+    padding: 30px;
+    text-wrap: nowrap;
+    background: linear-gradient(to right, #ab9bcc, #ffda70);
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #221f1f;
+    border-radius: 10px;
+  }
 }
 </style>
