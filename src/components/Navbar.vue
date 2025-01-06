@@ -32,11 +32,11 @@ defineProps({
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="analyze" class="nav-link">
+          <RouterLink to="statistics" class="nav-link">
             <span class="material-symbols-outlined">
               analytics
             </span>
-            Анализ
+            Статистика
           </RouterLink>
         </li>
         <li class="nav-item">

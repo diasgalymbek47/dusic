@@ -143,11 +143,13 @@ function setVolume(event) {
 
   z-index: -1;
   opacity: 0;
+  pointer-events: none;
 }
 
 .audio-player.active {
   z-index: 4;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .audio-player.active .audio-player-content {
