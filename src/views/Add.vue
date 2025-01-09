@@ -1,33 +1,69 @@
 ﻿<script setup>
+import { ref } from 'vue';
+import axios from 'axios';
 
+const formData = ref({
+  music_name: '',
+  artist_name: '',
+  album_name: '',
+  genre_name: '',
+  image_file: null,
+  music_file: null,
+});
+
+function handleFileChange(event, type) {
+  if (type === 'image') {
+    formData.value.image_file = event.target.files[0];
+  } else if (type === 'music') {
+    formData.value.music_file = event.target.files[0];
+  }
+}
+
+function handleSubmit() {
+  const data = new FormData();
+  data.append('music_name', formData.value.music_name);
+  data.append('artist_name', formData.value.artist_name);
+  data.append('album_name', formData.value.album_name);
+  data.append('genre_name', formData.value.genre_name);
+  data.append('image_file', formData.value.image_file);
+  data.append('music_file', formData.value.music_file);
+
+  axios.post('https://dusic.vercel.app/api/Music/AddMusic', data)
+      .then(response => {
+        console.log('Music added:', response.data);
+      })
+      .catch(error => {
+        console.error('Error adding music:', error);
+      });
+}
 </script>
 
 <template>
   <div class="container">
-    <form>
+    <form @submit.prevent="handleSubmit">
       <div class="form-group d-flex flex-column">
         <label for="music_name">Название музыки</label>
-        <input name="music_name" id="music_name" type="text" autocomplete="off">
+        <input v-model="formData.music_name" id="music_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="artist_name">Название артиста</label>
-        <input name="artist_name" id="artist_name" type="text" autocomplete="off">
+        <input v-model="formData.artist_name" id="artist_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="album_name">Название альбома</label>
-        <input name="album_name" id="album_name" type="text" autocomplete="off">
+        <input v-model="formData.album_name" id="album_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="genre_name">Название жанра</label>
-        <input name="genre_name" id="genre_name" type="text" autocomplete="off">
+        <input v-model="formData.genre_name" id="genre_name" type="text" autocomplete="off">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="image_file">Выберите картинку</label>
-        <input name="image_file" id="image_file" type="file">
+        <input @change="handleFileChange($event, 'image')" type="file">
       </div>
       <div class="form-group d-flex flex-column mt-4">
         <label for="music_file">Выберите музыку</label>
-        <input name="music_file" id="music_file" type="file">
+        <input @change="handleFileChange($event, 'music')" type="file">
       </div>
       <input class="send_btn mt-5" type="submit" value="Добавить">
     </form>
