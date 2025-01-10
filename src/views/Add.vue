@@ -28,7 +28,7 @@ function handleSubmit() {
   data.append('image_file', formData.value.image_file);
   data.append('music_file', formData.value.music_file);
 
-  axios.post('https://meow.isgood.host/api/Music/SaveMusic', data)
+  axios.post('https://meow.isgood.host/backend/api/Music/SaveMusic', data)
       .then(response => {
         console.log('Music added:', response.data);
       })
