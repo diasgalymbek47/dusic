@@ -10,7 +10,7 @@ const props = defineProps({
     type: String,
     required: false
   },
-  artist: {
+  artists: {
     type: String,
     required: false
   },
@@ -51,7 +51,7 @@ const playPlayer = () => {
     <div class="music-img-box">
       <img class="music-img" :src="img" alt=""/>
     </div>
-    <span class="music-info">{{ name }} | {{ artist }}</span>
+    <span class="music-info">{{ name }} | {{ artists }}</span>
   </div>
 </template>
 
