@@ -14,9 +14,10 @@ const player = useMusicPlayer();
       <div class="home-view-content-body container">
         <div class="row">
           <Music class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-4"
+                 v-if="player.collection.length > 0"
                  v-for="(music, index) in player.collection" :id="music.id"
                  :name="music.name"
-                 :artists="music.artists" :img="music.srcPicture" :src="music.srcMusic" :key="index"/>
+                 :artists="music.artists" :img="music.img" :src="music.src" :key="index"/>
         </div>
       </div>
     </div>

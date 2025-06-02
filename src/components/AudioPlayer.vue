@@ -60,7 +60,7 @@ function setVolume(event) {
         <div v-if="player.collection.length > 0" class="audio-player-list-body">
           <MusicV2 v-for="(music, index) in player.collection" :key="index"
                    :id="music.id" :name="music.name"
-                   :artists="music.artists" :img="music.srcPicture" :src="music.srcMusic"/>
+                   :artists="music.artists" :img="music.img" :src="music.src"/>
         </div>
         <div v-else>Пусто</div>
       </div>

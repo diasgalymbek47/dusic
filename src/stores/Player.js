@@ -114,7 +114,7 @@ export const useMusicPlayer = defineStore('audioPlayer', {
         },
         async updateCollection(condition = false) {
             if (this.collection.length <= 0 || condition) {
-                const req = await axios.get('https://meow.isgood.host/backend/api/Music/GetMusics');
+                const req = await axios.get('https://diasgalymbek47.github.io/music/data.json');
                 this.collection = req.data;
                 console.log("Collection updated")
             }

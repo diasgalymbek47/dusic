@@ -31,6 +31,8 @@ const props = defineProps({
 })
 import {useMusicPlayer} from "@/stores/Player.js";
 
+console.log(props.id, props.name, props.artists)
+
 const player = useMusicPlayer();
 const playPlayer = () => {
   player.change(props.src);
